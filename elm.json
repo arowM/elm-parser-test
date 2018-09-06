@@ -1,0 +1,16 @@
+{
+    "type": "package",
+    "name": "arowM/elm-parser-test",
+    "summary": "Helper functions to develop/test your own parser using elm/parser",
+    "license": "MIT",
+    "version": "1.0.0",
+    "exposed-modules": [
+        "Parser.Test"
+    ],
+    "elm-version": "0.19.0 <= v < 0.20.0",
+    "dependencies": {
+        "elm/core": "1.0.0 <= v < 2.0.0",
+        "elm/parser": "1.1.0 <= v < 2.0.0"
+    },
+    "test-dependencies": {}
+}
