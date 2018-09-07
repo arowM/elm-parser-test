@@ -31,20 +31,15 @@ import Parser exposing ((|.), DeadEnd, Parser, backtrackable, oneOf, problem, su
 -}
 run : Parser a -> String -> ( Result (List DeadEnd) a, Bool )
 run p str =
-    case Parser.run p str of
-        Ok a ->
-            ( Ok a, isBacktrackableErr (p |. problem "fail") str )
-
-        Err e ->
-            ( Err e, isBacktrackableErr p str )
+    ( Parser.run p str, isBacktrackable p str )
 
 
-isBacktrackableErr : Parser a -> String -> Bool
-isBacktrackableErr p str =
+isBacktrackable : Parser a -> String -> Bool
+isBacktrackable p str =
     let
         checker =
             oneOf
-                [ Parser.map (\_ -> ()) p
+                [ Parser.map (\_ -> ()) (p |. problem "fail")
                 , succeed ()
                 ]
     in
