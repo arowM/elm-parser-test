@@ -1,0 +1,13 @@
+sudo: false # force container-based infrastructure
+language: node_js
+node_js:
+  - "node"
+install:
+  - npm install
+script:
+  - npm test
+cache:
+  directories:
+    - "node_modules"
+    - "elm-stuff"
+    - "tests/elm-stuff"

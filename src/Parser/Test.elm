@@ -14,16 +14,18 @@ import Parser exposing ((|.), DeadEnd, Parser, backtrackable, oneOf, problem, su
 
 {-| Check if a parser is backtrackable or not.
 
-    run (keyword "import") "imp"
-    --> (Err _, True)
+    import Parser
 
-    run (keyword "import") "import"
+    run (Parser.keyword "import") "imp" |> Tuple.mapFirst (Result.mapError (\_ -> ()))
+    --> (Err (), True)
+
+    run (Parser.keyword "import") "import"
     --> (Ok (), False)
 
-    run spaces "  "
+    run Parser.spaces "  "
     --> (Ok (), False)
 
-    run (backtrackable spaces) "  "
+    run (Parser.backtrackable Parser.spaces) "  "
     --> (Ok (), True)
 
 -}
