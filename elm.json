@@ -3,7 +3,7 @@
     "name": "arowM/elm-parser-test",
     "summary": "Helper functions to develop/test your own parser using elm/parser",
     "license": "MIT",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "exposed-modules": [
         "Parser.Test"
     ],
