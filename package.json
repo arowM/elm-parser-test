@@ -3,12 +3,6 @@
   "description": "An immutable approach imitating references of mutable languages.",
   "main": "index.js",
   "scripts": {
-    "elm-analyse": "elm-analyse",
-    "elm-format": "elm-format",
-    "elm": "elm",
-    "elm-test": "elm-test",
-    "elm-verify-examples": "elm-verify-examples",
-    "analyse": "elm-analyse && cd tests && elm-analyse",
     "format": "elm-format src tests",
     "test": "elm-verify-examples"
   },
